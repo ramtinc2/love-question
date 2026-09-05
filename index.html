@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>یه سؤال کوچولو ❤️</title>
+<style>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;overflow:hidden;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 50% 35%,#3a1730 0,#170b20 45%,#09060d 100%);color:#fff;display:flex;align-items:center;justify-content:center}
+.bg span{position:fixed;font-size:20px;opacity:.18;animation:float 7s linear infinite}.bg span:nth-child(1){left:8%;top:90%;animation-delay:0s}.bg span:nth-child(2){left:22%;top:70%;animation-delay:2s}.bg span:nth-child(3){left:75%;top:85%;animation-delay:1s}.bg span:nth-child(4){left:90%;top:65%;animation-delay:3s}
+.card{width:min(90%,520px);padding:42px 25px;border:1px solid rgba(255,255,255,.15);border-radius:30px;background:rgba(255,255,255,.08);backdrop-filter:blur(14px);box-shadow:0 20px 80px rgba(0,0,0,.5);text-align:center;position:relative;z-index:2}
+.heart{font-size:65px;animation:pulse 1.4s infinite}.question{font-size:28px;font-weight:700;margin:20px 0 32px}
+.buttons{height:120px;display:flex;align-items:center;justify-content:center;gap:18px;position:relative}
+button{border:0;border-radius:18px;padding:15px 30px;font-size:19px;font-weight:bold;cursor:pointer;transition:.25s;min-width:110px}
+#yes{background:#ff4f91;color:#fff;box-shadow:0 8px 25px rgba(255,79,145,.3)}
+#no{background:rgba(255,255,255,.12);color:#fff}
+.hint{font-size:13px;opacity:.55;margin-top:18px}
+.success{display:none}.success h2{font-size:31px;margin:15px 0}.success p{font-size:18px;line-height:2;opacity:.9}
+.reveal{margin-top:20px;font-size:42px;animation:pop .7s ease}
+@keyframes pulse{50%{transform:scale(1.12)}} @keyframes float{to{transform:translateY(-120vh) rotate(25deg);opacity:0}} @keyframes pop{0%{transform:scale(.2);opacity:0}100%{transform:scale(1);opacity:1}}
+</style>
+</head>
+<body>
+<div class="bg"><span>❤️</span><span>♡</span><span>💗</span><span>❤️</span></div>
+<div class="card">
+  <div id="ask">
+    <div class="heart">❤️</div>
+    <div class="question">دوستم داری؟ 🥺</div>
+    <div class="buttons">
+      <button id="no">نه 😐</button>
+      <button id="yes">آره ❤️</button>
+    </div>
+    <div class="hint">فقط یه جواب درست وجود داره... 👀</div>
+  </div>
+  <div id="success" class="success">
+    <div class="reveal">💖✨💖</div>
+    <h2>می‌دونستم! 😌❤️</h2>
+    <p>پس این صفحه دقیقاً برای تو ساخته شده بود.<br>حالا لبخند بزن، چون امروز قشنگ‌تر شد. 🫶</p>
+  </div>
+</div>
+<script>
+const no=document.getElementById('no'), yes=document.getElementById('yes');
+let noScale=1, yesScale=1;
+no.addEventListener('click',()=>{
+  noScale=Math.max(.18,noScale-.14);
+  yesScale=Math.min(2.1,yesScale+.14);
+  no.style.transform=`scale(${noScale})`;
+  yes.style.transform=`scale(${yesScale})`;
+  if(noScale<=.3) no.textContent='نه؟ 🥺';
+});
+yes.addEventListener('click',()=>{
+  document.getElementById('ask').style.display='none';
+  document.getElementById('success').style.display='block';
+  for(let i=0;i<24;i++){
+    const h=document.createElement('div'); h.textContent=['❤️','💗','💕','✨'][i%4];
+    h.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:105vh;font-size:${18+Math.random()*25}px;z-index:5;animation:float ${3+Math.random()*3}s linear forwards`;
+    document.body.appendChild(h);
+  }
+});
+</script>
+</body>
+</html>
