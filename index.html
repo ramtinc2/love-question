@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>یه سؤال مهم ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;overflow-x:hidden;font-family:Tahoma,Arial,sans-serif;color:#fff;background:radial-gradient(circle at top,#42172f,#150914 65%,#080509);text-align:center}.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px}.card{width:min(92%,620px);padding:42px 24px;border-radius:32px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);box-shadow:0 20px 80px #0008}.heart{font-size:70px;animation:pulse 1.3s infinite}.question{font-size:30px;font-weight:bold;margin:20px 0 30px}.buttons{height:120px;display:flex;gap:18px;align-items:center;justify-content:center}button{border:0;border-radius:18px;padding:15px 30px;font-size:19px;font-weight:bold;cursor:pointer;transition:.25s}#yes{background:#ff3f88;color:white}#no{background:#ffffff18;color:white}.hidden{display:none!important}#surprise{padding:35px 15px 70px}.title{font-size:30px;margin:10px}.letter{margin:25px auto;padding:25px;width:min(90%,500px);background:linear-gradient(135deg,#fff4f8,#ffe1ed);color:#4a1830;border-radius:24px}.letter h2{margin-top:0}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:min(92%,600px);margin:30px auto}.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px}.next{background:#fff;color:#7c1748;margin-top:20px}.final{font-size:28px;margin-top:30px}.finalBox{margin:25px auto;padding:25px;border-radius:25px;background:#ffffff10;width:min(90%,500px)}.float{position:fixed;z-index:10;pointer-events:none;animation:rise 4s linear forwards}@keyframes pulse{50%{transform:scale(1.13)}}@keyframes rise{from{transform:translateY(0) rotate(0);opacity:1}to{transform:translateY(-120vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<audio id="music" src="music.mp3" loop></audio>
+<div class="screen" id="askScreen"><div class="card"><div class="heart">❤️</div><div class="question">دوستم داری؟ 🥺</div><div class="buttons"><button id="no">نه 😐</button><button id="yes">آره ❤️</button></div><small style="opacity:.6">فقط یه جواب درست وجود داره... 👀</small></div></div>
+<div id="surprise" class="hidden">
+<h1 class="title">می‌دونستم 😌❤️</h1><p>پس آماده باش برای یه سورپرایز کوچولو... 💌</p>
+<div class="letter"><h2>برای تو ❤️</h2><p>این قسمت رو با متن خاص خودت برای دوست دخترت عوض کن 🫶</p></div>
+<h2>یه چندتا خاطره قشنگمون 📸</h2>
+<div class="gallery"><img src="photo1.jpg"><img src="photo2.jpg"><img src="photo3.jpg"><img src="photo4.jpg"></div>
+<button class="next" id="finalBtn">یه سورپرایز دیگه دارم 👀</button>
+<div id="final" class="hidden"><div class="finalBox"><div style="font-size:65px">🎁❤️✨</div><div class="final">هرچقدر هم بگذره، بازم انتخابم تویی 🫶❤️</div><p>حالا یه لبخند بزن... این سایت فقط برای تو ساخته شده 😌</p></div></div>
+</div>
+<script>
+const no=document.getElementById('no'),yes=document.getElementById('yes'),music=document.getElementById('music');let ns=1,ys=1;
+no.onclick=()=>{ns=Math.max(.15,ns-.14);ys=Math.min(2.3,ys+.16);no.style.transform=`scale(${ns})`;yes.style.transform=`scale(${ys})`;};
+yes.onclick=()=>{document.getElementById('askScreen').classList.add('hidden');document.getElementById('surprise').classList.remove('hidden');music.play().catch(()=>{});for(let i=0;i<55;i++)setTimeout(heart,i*45);};
+document.getElementById('finalBtn').onclick=()=>{document.getElementById('final').classList.remove('hidden');for(let i=0;i<70;i++)setTimeout(heart,i*35);document.getElementById('final').scrollIntoView({behavior:'smooth'});};
+function heart(){const e=document.createElement('div');e.className='float';e.textContent=['❤️','💖','💕','✨','💗'][Math.floor(Math.random()*5)];e.style.left=Math.random()*100+'vw';e.style.top='105vh';e.style.fontSize=(18+Math.random()*32)+'px';document.body.appendChild(e);setTimeout(()=>e.remove(),4500);}
+</script>
+</body></html>
